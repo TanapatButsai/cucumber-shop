@@ -18,7 +18,7 @@ Background:
         Then total should be 121.00
         And the stock of "Bread" should be 3
         And the stock of "Jam" should be 9
-
+#    (Tanapat Butsai 6410451059)
     Scenario Outline: Buy one product in table
         When I buy <product> with quantity <quantity>
         Then total should be <total>

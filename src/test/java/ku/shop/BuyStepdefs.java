@@ -32,7 +32,7 @@ public class BuyStepdefs {
     public void total_should_be(double total) {
         assertEquals(total, order.getTotal());
     }
-    @Then("the stock of {string} should be {int}")
+    @Then("the stock of {string} should be {int}") //(Tanapat Butsai 6410451059)
     public void the_stock_of_should_be(String name, int expectedStock) {
         Product prod = catalog.getProduct(name);
         assertNotNull(prod);
