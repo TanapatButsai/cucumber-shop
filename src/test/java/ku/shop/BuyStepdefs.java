@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class BuyStepdefs {
 
     private ProductCatalog catalog;
@@ -31,6 +31,12 @@ public class BuyStepdefs {
     @Then("total should be {float}")
     public void total_should_be(double total) {
         assertEquals(total, order.getTotal());
+    }
+    @Then("the stock of {string} should be {int}")
+    public void the_stock_of_should_be(String name, int expectedStock) {
+        Product prod = catalog.getProduct(name);
+        assertNotNull(prod);
+        assertEquals(expectedStock, prod.getStock());
     }
 }
 
